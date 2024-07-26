@@ -1,0 +1,19 @@
+name: Test Project
+on: workflow_dispatch
+jobs: 
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v3
+      - name: Install dotnet
+        uses: actions/setup-dotnet@v4
+        with: 
+          dotnet-version: 8.x
+          cache: true
+          cache-dependency-path: ["./packages.lock.json", "./packages.lock.json"]
+      # - name: Install dependencies
+      #   run: npm ci
+      # - name: Run tests
+      #   run: npm test
+ 
