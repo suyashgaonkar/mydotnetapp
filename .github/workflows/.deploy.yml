@@ -14,10 +14,12 @@ jobs:
           cache: true
           cache-dependency-path: './packages.lock.json'
 
-      - name: Install Nuget]
+      - name: Install Nuget
         uses: nuget/setup-nuget@v2
         with:
           nuget-version: '5.x'
+          
+      - name: run nuget
         run: nuget restore MyDotNetApp.sln
 
       - name: comment
